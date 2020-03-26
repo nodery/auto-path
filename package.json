@@ -1,7 +1,7 @@
 {
   "name": "@nodewell/path",
   "version": "0.0.0-development",
-  "description": "",
+  "description": "A Node.js utility to provide an easy, simple solution for path management in your build scripts and in general tasks.",
   "author": "Richard King <richrdkng@gmail.com> (www.richrdkng.com)",
   "license": "ISC",
   "homepage": "https://github.com/nodewell/path#readme",

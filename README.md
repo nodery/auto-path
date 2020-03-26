@@ -31,12 +31,12 @@
 ---
 
 <h3 align="center">
-  Manageable, toggleable, conditional CSS classes with spread syntax.
+  Painless, compact, simple path management.
 </h3>
 
 <p align="center">
-  A small wrapper function around <a href="https://www.npmjs.com/package/@nodewell/from-class">@nodewell/from-class</a> to manage CSS classes
-  via the className attribute <b>using the ... spread syntax</b>.  
+  A Node.js utility to provide an easy, simple solution for path management
+  in your build scripts and in general tasks.
 </p>
 
 ---
