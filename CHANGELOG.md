@@ -1,3 +1,11 @@
+## [1.0.1](https://github.com/nodewell/path/compare/v1.0.0...v1.0.1) (2020-03-28)
+
+
+### Bug Fixes
+
+* fix path normalization on Windows ([d64b75e](https://github.com/nodewell/path/commit/d64b75e243026cb340795a36161704f638fffd8e))
+* fix triple dot replacement error on Windows ([b251432](https://github.com/nodewell/path/commit/b251432fbfa9611c90cc2057303b1c21c8f40d2c))
+
 # 1.0.0 (2020-03-28)
 
 
