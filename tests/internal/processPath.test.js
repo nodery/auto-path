@@ -11,24 +11,24 @@ test('is a function', () => {
 
 test('returns root dir', () => {
   expect(processPath(root, dirs, ['@'])).toBe(root)
-  expect(processPath(root, dirs, ['@/'])).toBe(`${root}/`)
+  expect(processPath(root, dirs, ['@/'])).toBe(path.normalize(`${root}/`))
 })
 
 test('returns custom dirs relative to root', () => {
-  expect(processPath(root, dirs, ['@/dist'])).toBe(`${root}/dist`)
-  expect(processPath(root, dirs, ['@/dist/'])).toBe(`${root}/dist/`)
+  expect(processPath(root, dirs, ['@/dist'])).toBe(path.normalize(`${root}/dist`))
+  expect(processPath(root, dirs, ['@/dist/'])).toBe(path.normalize(`${root}/dist/`))
 
-  expect(processPath(root, dirs, ['@/src'])).toBe(`${root}/src`)
-  expect(processPath(root, dirs, ['@/src/'])).toBe(`${root}/src/`)
+  expect(processPath(root, dirs, ['@/src'])).toBe(path.normalize(`${root}/src`))
+  expect(processPath(root, dirs, ['@/src/'])).toBe(path.normalize(`${root}/src/`))
 
-  expect(processPath(root, dirs, ['@/vendors'])).toBe(`${root}/vendors`)
-  expect(processPath(root, dirs, ['@/vendors/'])).toBe(`${root}/vendors/`)
+  expect(processPath(root, dirs, ['@/vendors'])).toBe(path.normalize(`${root}/vendors`))
+  expect(processPath(root, dirs, ['@/vendors/'])).toBe(path.normalize(`${root}/vendors/`))
 })
 
 test('returns joined path from path segments', () => {
-  expect(processPath(root, dirs, ['@', '/src'])).toBe(`${root}/src`)
-  expect(processPath(root, dirs, ['@', 'src'])).toBe(`${root}/src`)
-  expect(processPath(root, dirs, ['@', 'src', '/'])).toBe(`${root}/src/`)
+  expect(processPath(root, dirs, ['@', '/src'])).toBe(path.normalize(`${root}/src`))
+  expect(processPath(root, dirs, ['@', 'src'])).toBe(path.normalize(`${root}/src`))
+  expect(processPath(root, dirs, ['@', 'src', '/'])).toBe(path.normalize(`${root}/src/`))
 })
 
 test('throws an error, when path segment is not a string', () => {

@@ -11,8 +11,8 @@ test('list all dirs', () => {
   path.__root = root
 
   expect(path('@')).toStrictEqual(root)
-  expect(path('@/')).toStrictEqual(`${root}/`)
+  expect(path('@/')).toStrictEqual(path.normalize(`${root}/`))
 
-  expect(path('@/src')).toStrictEqual(`${root}/src`)
-  expect(path('@/src/')).toStrictEqual(`${root}/src/`)
+  expect(path('@/src')).toStrictEqual(path.normalize(`${root}/src`))
+  expect(path('@/src/')).toStrictEqual(path.normalize(`${root}/src/`))
 })

@@ -1,3 +1,4 @@
+const path = require('path')
 const replaceAtPath = require('../../src/internal/replaceAtPath')
 
 test('is a function', () => {
@@ -8,10 +9,10 @@ test('returns root dir', () => {
   const root = 'rootDir'
 
   expect(replaceAtPath(root, [], '@')).toEqual(root)
-  expect(replaceAtPath(root, [], '@/')).toEqual(`${root}/`)
+  expect(replaceAtPath(root, [], '@/')).toEqual(path.normalize(`${root}/`))
 
   expect(replaceAtPath(root, [], '@root')).toEqual(root)
-  expect(replaceAtPath(root, [], '@root/')).toEqual(`${root}/`)
+  expect(replaceAtPath(root, [], '@root/')).toEqual(path.normalize(`${root}/`))
 })
 
 test('returns existing dirs from a list', () => {
@@ -22,14 +23,14 @@ test('returns existing dirs from a list', () => {
     'vendors'
   ]
 
-  expect(replaceAtPath(root, pathList, '@dist')).toEqual(`${root}/dist`)
-  expect(replaceAtPath(root, pathList, '@dist/')).toEqual(`${root}/dist/`)
+  expect(replaceAtPath(root, pathList, '@dist')).toEqual(path.normalize(`${root}/dist`))
+  expect(replaceAtPath(root, pathList, '@dist/')).toEqual(path.normalize(`${root}/dist/`))
 
-  expect(replaceAtPath(root, pathList, '@src')).toEqual(`${root}/src`)
-  expect(replaceAtPath(root, pathList, '@src/')).toEqual(`${root}/src/`)
+  expect(replaceAtPath(root, pathList, '@src')).toEqual(path.normalize(`${root}/src`))
+  expect(replaceAtPath(root, pathList, '@src/')).toEqual(path.normalize(`${root}/src/`))
 
-  expect(replaceAtPath(root, pathList, '@vendors')).toEqual(`${root}/vendors`)
-  expect(replaceAtPath(root, pathList, '@vendors/')).toEqual(`${root}/vendors/`)
+  expect(replaceAtPath(root, pathList, '@vendors')).toEqual(path.normalize(`${root}/vendors`))
+  expect(replaceAtPath(root, pathList, '@vendors/')).toEqual(path.normalize(`${root}/vendors/`))
 })
 
 test('throws errors for non-existing dirs from a list', () => {
