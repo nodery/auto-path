@@ -17,21 +17,23 @@
     "lint": "standard --verbose | snazzy",
     "lint:fix": "standard --fix",
     "test": "jest",
-    "build": "echo \"skip build\"",
-    "release:prepare": "rm -rf dist && mkdir dist && cp src/*.* LICENSE* package* README* dist/",
-    "release": "npm run release:prepare && semantic-release",
-    "semantic-release": "semantic-release"
+    "build": "gulp --gulpfile scripts/index.js -- build"
+  },
+  "dependencies": {
+    "pkg-dir": "^4.2.0",
+    "string-similarity": "^4.0.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.9.0",
-    "@babel/preset-env": "^7.9.0",
-    "@semantic-release/changelog": "^5.0.0",
+    "@semantic-release/changelog": "^5.0.1",
     "@semantic-release/exec": "^5.0.0",
     "@semantic-release/git": "^9.0.0",
     "@types/jest": "^25.1.4",
-    "babel-jest": "^25.1.0",
     "codecov": "^3.6.5",
-    "jest": "^25.1.0",
+    "del": "^5.1.0",
+    "delay": "^4.3.0",
+    "gulp": "^4.0.2",
+    "gulp-debug": "^4.0.0",
+    "jest": "^25.2.3",
     "semantic-release": "^17.0.4",
     "snazzy": "^8.0.0",
     "standard": "^14.3.3"

@@ -1,0 +1,129 @@
+'use strict'
+
+const fs = require('fs')
+const path = require('path')
+const pkgDir = require('pkg-dir')
+const stringSimilarity = require('string-similarity')
+
+const root = pkgDir.sync()
+
+function replaceAtPath (pathString) {
+  return pathString.replace(/^\s*@([\w-]*)/, (_, atPath) => {
+    if (atPath === '' || atPath === 'root') {
+      return root
+    }
+
+    if (pathList.includes(atPath)) {
+      return path.join(root, atPath)
+    }
+
+    const { bestMatch } = stringSimilarity.findBestMatch(atPath, pathList)
+
+    if (bestMatch.rating === 0) {
+      throw new Error(`Path @${atPath} doesn't exist. Available paths: @${pathList.join(', @')}`)
+    }
+
+    throw new Error(`Path @${atPath} doesn't exist. Did you mean @${bestMatch.target}?`)
+  })
+}
+
+function replaceTripleDots (pathString) {
+  return pathString.replace(/\*\*\*$/, `**${path.sep}*`)
+}
+
+function walk (dir) {
+  let results = []
+
+  const list = fs.readdirSync(dir)
+
+  // do not even add the these to the list
+  const excludeCompletely = [
+    '.git'
+  ]
+
+  // add these to the list, but do not step into them
+  const excludeStepInto = [
+    'node_modules'
+  ]
+
+  list.forEach(file => {
+    const absolutePath = path.join(dir, file)
+    const relativePath = path.relative(root, absolutePath)
+
+    const stat = fs.statSync(absolutePath)
+
+    if (stat.isDirectory()) {
+      if (excludeCompletely.includes(file)) {
+        return
+      }
+
+      if (excludeStepInto.includes(file)) {
+        results.push(relativePath)
+        return
+      }
+
+      results.push(relativePath)
+      // results = results.concat(walk(absolutePath))
+    }
+  })
+
+  return results
+}
+
+const pathList = walk(root)
+
+function pathFunction (...paths) {
+  let joinedPath = ''
+
+  paths.forEach((p, index) => {
+    if (typeof p !== 'string') {
+      throw new Error(`Path must be a string, got: "${p}"`)
+    }
+
+    if (index === 0) {
+      joinedPath = replaceAtPath(p)
+    } else {
+      joinedPath = path.join(joinedPath, p)
+    }
+  })
+
+  return replaceTripleDots(joinedPath)
+}
+
+const proxiedPathFunction = new Proxy(
+  pathFunction,
+  {
+    get: (_, prop) => {
+      if (prop === 'root') {
+        return root
+      }
+
+      if (pathList.includes(prop)) {
+        return path.join(root, prop)
+      }
+
+      const { bestMatch } = stringSimilarity.findBestMatch(prop, pathList)
+
+      if (bestMatch.rating === 0) {
+        throw new Error(`Path .${prop} doesn't exist. Available paths: .${pathList.join(', .')}`)
+      }
+
+      throw new Error(`Path .${prop} doesn't exist. Did you mean .${bestMatch.target}?`)
+    }
+  }
+)
+
+// console.log(proxiedFunction.xass)
+// console.log(pathList)
+
+// console.log(walk(root))
+
+// console.log(walk(root))
+
+
+// console.log($('@root/src'))
+
+// const str = '@root/src'
+// console.log(replaceAtPath('src'))
+
+module.exports = proxiedPathFunction
