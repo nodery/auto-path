@@ -59,7 +59,8 @@ jobs:
           ${{ runner.os }}-build-
           ${{ runner.os }}-
 
-    - run: npm ci
+    # the "|| npm install" part is for Node.js version 9.x
+    - run: npm ci || npm install
     - run: npm test
 
     env:
