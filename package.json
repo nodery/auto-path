@@ -17,7 +17,9 @@
     "lint": "standard --verbose | snazzy",
     "lint:fix": "standard --fix",
     "test": "jest",
-    "build": "gulp --gulpfile scripts/index.js -- build"
+    "pre-build": "npm run gulp -- pre-build",
+    "build": "npm run gulp -- build",
+    "gulp": "gulp --gulpfile scripts/index.js"
   },
   "dependencies": {
     "pkg-dir": "^4.2.0",

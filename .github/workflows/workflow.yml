@@ -58,6 +58,7 @@ jobs:
           ${{ runner.os }}-
 
     - run: npm ci
+    - run: npm run pre-build
     - run: npx semantic-release
 
     env:
