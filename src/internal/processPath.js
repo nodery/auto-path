@@ -19,5 +19,5 @@ module.exports = function processPath (root, dirs, paths) {
     }
   })
 
-  return replaceTripleDots(joinedPath)
+  return path.normalize(replaceTripleDots(joinedPath))
 }

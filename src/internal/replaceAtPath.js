@@ -4,7 +4,7 @@ const path = require('path')
 const stringSimilarity = require('string-similarity')
 
 module.exports = function replaceAtPath (root, pathList, pathString) {
-  return pathString.replace(/^\s*@([\w-]*)/, (_, atPath) => {
+  const replacedPathString = pathString.replace(/^\s*@([\w-]*)/, (_, atPath) => {
     if (atPath === '' || atPath === 'root') {
       return root
     }
@@ -21,4 +21,6 @@ module.exports = function replaceAtPath (root, pathList, pathString) {
 
     throw new Error(`Path @${atPath} doesn't exist. Did you mean @${bestMatch.target}?`)
   })
+
+  return path.normalize(replacedPathString)
 }
