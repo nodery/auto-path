@@ -1,3 +1,4 @@
+const path = require('path')
 const replaceTripleDots = require('../../src/internal/replaceTripleDots')
 
 test('is a function', () => {
@@ -5,6 +6,6 @@ test('is a function', () => {
 })
 
 test('returns **/* for ***', () => {
-  expect(replaceTripleDots('***')).toEqual('**/*')
-  expect(replaceTripleDots('dir/***')).toEqual('dir/**/*')
+  expect(replaceTripleDots('***')).toEqual(path.normalize('**/*'))
+  expect(replaceTripleDots('dir/***')).toEqual(path.normalize('dir/**/*'))
 })
