@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/nodewell/path/compare/v1.0.1...v1.1.0) (2020-04-01)
+
+
+### Features
+
+* add a simple .path* config file support ([cd997b7](https://github.com/nodewell/path/commit/cd997b719323145fed2be8309419df0396bc0a1a)), closes [#4](https://github.com/nodewell/path/issues/4)
+
 ## [1.0.1](https://github.com/nodewell/path/compare/v1.0.0...v1.0.1) (2020-03-28)
 
 
