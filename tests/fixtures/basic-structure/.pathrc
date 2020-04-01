@@ -1,0 +1,5 @@
+{
+  "@assets": "src/assets",
+  "@temp": "./temp",
+  "@custom-path": "@/custom/path"
+}

@@ -23,7 +23,8 @@
   },
   "dependencies": {
     "pkg-dir": "^4.2.0",
-    "string-similarity": "^4.0.1"
+    "string-similarity": "^4.0.1",
+    "yaml": "^1.8.3"
   },
   "devDependencies": {
     "@semantic-release/changelog": "^5.0.1",

@@ -1,26 +1,36 @@
 'use strict'
 
-const path = require('path')
+const p = require('path')
 const stringSimilarity = require('string-similarity')
 
-module.exports = function replaceAtPath (root, pathList, pathString) {
-  const replacedPathString = pathString.replace(/^\s*@([\w-]*)/, (_, atPath) => {
-    if (atPath === '' || atPath === 'root') {
+/**
+ * Replaces the given path and returns the processed and normalized path.
+ *
+ * @param {string} root   - The absolute path, to which the path will be joined.
+ * @param {Object} dirMap - The map of @-prefixed directories, which can be used with the @ sign.
+ * @param {string} path   - The path to join to the root path.
+ *
+ * @returns {string} Returns the processed and normalized path.
+ */
+module.exports = (root, dirMap, path) => {
+  const replacedPathString = path.replace(/^@[\w-]*/, atPath => {
+    if (atPath === '@') {
       return root
     }
 
-    if (pathList.includes(atPath)) {
-      return path.join(root, atPath)
+    if (atPath in dirMap) {
+      return dirMap[atPath]
     }
 
-    const { bestMatch } = stringSimilarity.findBestMatch(atPath, pathList)
+    const pathNames = Object.keys(dirMap)
+    const { bestMatch } = stringSimilarity.findBestMatch(atPath, pathNames)
 
     if (bestMatch.rating === 0) {
-      throw new Error(`Path @${atPath} doesn't exist. Available paths: @${pathList.join(', @')}`)
+      throw new Error(`Path ${atPath} doesn't exist. Available paths: ${pathNames.join(', ')}`)
     }
 
-    throw new Error(`Path @${atPath} doesn't exist. Did you mean @${bestMatch.target}?`)
+    throw new Error(`Path ${atPath} doesn't exist. Did you mean ${bestMatch.target}?`)
   })
 
-  return path.normalize(replacedPathString)
+  return p.normalize(replacedPathString)
 }

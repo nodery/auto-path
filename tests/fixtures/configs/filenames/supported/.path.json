@@ -1,0 +1,5 @@
+{
+  "@": "./",
+  "@src": "./frontend/src",
+  "@custom-path": "@/custom/path"
+}

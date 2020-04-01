@@ -1,14 +1,26 @@
 'use strict'
 
-const pkgDir = require('pkg-dir')
+const getPackageDir = require('./internal/getPackageDir')
+const getDirMap = require('./internal/getDirMap')
+const getConfigFilePath = require('./internal/getConfigFilePath')
+const loadConfigFile = require('./internal/loadConfigFile')
+const processConfigFile = require('./internal/processConfigFile')
 const processPath = require('./internal/processPath')
 
-const root = pkgDir.sync()
+const packageDir = getPackageDir()
+const dirMap = getDirMap(packageDir)
 
-function path (...paths) {
-  return processPath(path.__root, [], paths)
+const configPath = getConfigFilePath(packageDir)
+const rawConfigData = loadConfigFile(configPath)
+const configData = processConfigFile(packageDir, rawConfigData)
+
+/**
+ * Processes and returns the path segments.
+ *
+ * @param {string[]} paths - The path segments to process.
+ *
+ * @returns {string} Returns the processed path segments.
+ */
+module.exports = (...paths) => {
+  return processPath(packageDir, { ...dirMap, ...configData }, paths)
 }
-
-path.__root = root
-
-module.exports = path
