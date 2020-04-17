@@ -1,4 +1,8 @@
-# @nodewell/path
+<p align="center">
+  <img width="250" src="assets/icon-with-name-color.svg" alt="@nodewell/path" />
+</p>
+
+<img src="https://cdn.jsdelivr.net/npm/@nodewell/assets@1.2.1/media/github/divider.svg" alt="divider" />
 
 <!-- Badges - 1st row -->
 <p align="center">
@@ -44,6 +48,18 @@
 ## :thinking: Why?
 
 ## :package: Installation
+
+- **NPM:**
+
+  ```bash
+  npm install @nodewell/path --save-dev
+  ```
+
+- **Yarn:**
+
+  ```bash
+  yarn add @nodewell/path --dev
+  ```
 
 ## :coffee: Usage
 
