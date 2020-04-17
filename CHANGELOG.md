@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/nodewell/path/compare/v1.1.1...v1.1.2) (2020-04-17)
+
+
+### Bug Fixes
+
+* **readme:** fix logo URL issue ([a9d04e2](https://github.com/nodewell/path/commit/a9d04e21b4c92fa3b91d52ad75912dbd9518bbfb))
+
 ## [1.1.1](https://github.com/nodewell/path/compare/v1.1.0...v1.1.1) (2020-04-17)
 
 
