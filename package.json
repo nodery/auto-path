@@ -17,7 +17,6 @@
     "lint": "standard --verbose | snazzy",
     "lint:fix": "standard --fix",
     "test": "jest",
-    "pre-build": "npm run gulp -- pre-build",
     "build": "npm run gulp -- build",
     "gulp": "gulp --gulpfile scripts/index.js"
   },
@@ -32,8 +31,6 @@
     "@semantic-release/git": "^9.0.0",
     "@types/jest": "^25.1.4",
     "codecov": "^3.6.5",
-    "del": "^5.1.0",
-    "delay": "^4.3.0",
     "gulp": "^4.0.2",
     "gulp-debug": "^4.0.0",
     "jest": "^25.2.3",

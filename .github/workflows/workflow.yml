@@ -119,7 +119,7 @@ jobs:
           ${{ runner.os }}-
 
     - run: npm ci
-    - run: npm run pre-build
+    - run: rm -rf dist && mkdir dist && cp package.json dist
     - run: npx semantic-release
 
     env:
