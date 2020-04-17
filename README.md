@@ -9,7 +9,7 @@
   <!-- NPM badge -->
   <a href="https://www.npmjs.com/package/@nodewell/path"><img src="https://img.shields.io/npm/v/@nodewell/path?color=brightgreen&style=flat-square" alt="release-badge"></a>
   <!-- CI badge -->
-  <a href="https://github.com/nodewell/path/actions?query=workflow%3ACI"><img src="https://github.com/nodewell/path/workflows/CI/badge.svg?style=flat-square" alt="ci-badge"></a>
+  <a href="https://github.com/nodewell/path/actions?query=workflow%3Aci"><img src="https://github.com/nodewell/path/workflows/ci/badge.svg?style=flat-square" alt="ci-badge"></a>
   <!-- Coverage badge -->
   <a href="https://codecov.io/gh/nodewell/path"><img src="https://img.shields.io/codecov/c/github/nodewell/path?style=flat-square" alt="coverage-badge"></a>
   <!-- Dependency badge -->
