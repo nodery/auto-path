@@ -1,6 +1,6 @@
 <!-- Logo -->
 <p align="center">
-  <img width="250" src="assets/icon-with-name-color.svg" alt="@nodewell/path" />
+  <img width="250" src="https://cdn.jsdelivr.net/gh/nodewell/path/assets/icon-with-name-color.svg" alt="@nodewell/path" />
 </p>
 
 <!-- Branded divider -->
