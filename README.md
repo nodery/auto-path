@@ -1,8 +1,10 @@
+<!-- Logo -->
 <p align="center">
   <img width="250" src="assets/icon-with-name-color.svg" alt="@nodewell/path" />
 </p>
 
-<img src="https://cdn.jsdelivr.net/npm/@nodewell/assets@1.2.1/media/github/divider.svg" alt="divider" />
+<!-- Branded divider -->
+<a href="https://github.com/nodewell"><img src="https://cdn.jsdelivr.net/npm/@nodewell/assets@1.2.1/media/github/divider.svg" alt="divider" /></a>
 
 <!-- Badges - 1st row -->
 <p align="center">
