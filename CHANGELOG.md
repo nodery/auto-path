@@ -1,3 +1,12 @@
+## [1.1.1](https://github.com/nodewell/path/compare/v1.1.0...v1.1.1) (2020-04-17)
+
+
+### Bug Fixes
+
+* **assets:** add missing readme and license ([9414714](https://github.com/nodewell/path/commit/94147148aa4399dcd4edb4c20f87f2c11cd5e437))
+* **assets:** fix wording and link ([e2bec98](https://github.com/nodewell/path/commit/e2bec9889119f539808fba3d377aa58ff3abeab5))
+* fix CI/CD badge ([1bf6d1a](https://github.com/nodewell/path/commit/1bf6d1a087ee1394d67e25030b51e49c8087f7fc))
+
 # [1.1.0](https://github.com/nodewell/path/compare/v1.0.1...v1.1.0) (2020-04-01)
 
 
