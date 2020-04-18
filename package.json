@@ -1,7 +1,7 @@
 {
   "name": "@nodewell/path",
   "version": "0.0.0-development",
-  "description": "A Node.js utility to provide an easy, simple solution for path management in your build scripts and in general tasks.",
+  "description": "A Node.js utility to provide a simple solution for path management in your build scripts and in general tasks.",
   "author": "Richard King <richrdkng@gmail.com> (www.richrdkng.com)",
   "license": "ISC",
   "homepage": "https://github.com/nodewell/path#readme",
@@ -12,7 +12,18 @@
   "bugs": {
     "url": "https://github.com/nodewell/path/issues"
   },
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "files": [
+    "internal/**/*.js",
+    "index.js"
+  ],
   "main": "index.js",
+  "engines": {
+    "node": ">=8"
+  },
   "scripts": {
     "lint": "standard --verbose | snazzy",
     "lint:fix": "standard --fix",
@@ -26,6 +37,7 @@
     "yaml": "^1.9.0"
   },
   "devDependencies": {
+    "@richrdkng/dmd-plugin-simple-nodejs-project": "^1.0.0",
     "@semantic-release/changelog": "^5.0.1",
     "@semantic-release/exec": "^5.0.0",
     "@semantic-release/git": "^9.0.0",
@@ -33,7 +45,9 @@
     "codecov": "^3.6.5",
     "gulp": "^4.0.2",
     "gulp-debug": "^4.0.0",
+    "gulp-tap": "^2.0.0",
     "jest": "^25.3.0",
+    "jsdoc-to-markdown": "^5.0.3",
     "semantic-release": "^17.0.6",
     "snazzy": "^8.0.0",
     "standard": "^14.3.3"
@@ -50,7 +64,6 @@
     "node",
     "nodewell",
     "path",
-    "paths",
-    "richrdkng"
+    "paths"
   ]
 }
