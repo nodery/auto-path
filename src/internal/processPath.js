@@ -8,6 +8,7 @@ const replaceTripleDots = require('./replaceTripleDots')
 /**
  * Processes the given path segments and returns the combined and normalized path.
  *
+ * @private
  * @param {string}          root         - The absolute path, to which the path segments will be joined.
  * @param {Object}          dirMap       - The map of @-prefixed directories, which can be used with the @ sign.
  * @param {string|string[]} pathSegments - The path segments to join to the root path.

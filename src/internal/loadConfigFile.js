@@ -7,6 +7,7 @@ const yaml = require('yaml')
 /**
  * Loads the config file from the given path.
  *
+ * @private
  * @param {string|null} path - The absolute path of the config file.
  *
  * @returns {Object} Returns the parsed config file data as an object.

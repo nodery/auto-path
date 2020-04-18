@@ -19,6 +19,7 @@ const filenames = [
 /**
  * Searches and returns the config filename's full path.
  *
+ * @private
  * @param {string} dir - The absolute path of the directory in which the config file will be searched for.
  *
  * @returns {string|null} Returns the config filename or null if no config filename exists.

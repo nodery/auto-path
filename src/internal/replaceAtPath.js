@@ -6,6 +6,7 @@ const stringSimilarity = require('string-similarity')
 /**
  * Replaces the given path and returns the processed and normalized path.
  *
+ * @private
  * @param {string} root   - The absolute path, to which the path will be joined.
  * @param {Object} dirMap - The map of @-prefixed directories, which can be used with the @ sign.
  * @param {string} path   - The path to join to the root path.

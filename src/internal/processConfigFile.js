@@ -6,6 +6,7 @@ const replaceAtPath = require('./replaceAtPath')
 /**
  * Processes and returns the valid list of directories from the given config file data.
  *
+ * @private
  * @param {string} - The absolute path of the root directory.
  * @param {Object} - The raw data retrieved from a config file.
  *

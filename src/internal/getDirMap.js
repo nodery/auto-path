@@ -6,6 +6,7 @@ const p = require('path')
 /**
  * Returns a map of @-prefixed directories in the given path relative to the given path.
  *
+ * @private
  * @param {string} path - The absolute path, where all the directories will be mapped from.
  *
  * @returns {Object} Returns the @-prefixed directory map relative to the given path.
