@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/nodewell/path/compare/v1.1.2...v1.1.3) (2020-04-19)
+
+
+### Bug Fixes
+
+* **docs:** fix contribution guide wording ([76985fb](https://github.com/nodewell/path/commit/76985fbf1d9feaeb06bb3cffac7c15355f47fee0))
+
 ## [1.1.2](https://github.com/nodewell/path/compare/v1.1.1...v1.1.2) (2020-04-17)
 
 
