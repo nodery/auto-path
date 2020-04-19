@@ -25,12 +25,13 @@ const configData = processConfigFile(packageDir, rawConfigData)
  *
  * @returns {string} Returns the processed path segments.
  *
- * @example <caption>General Usage</caption>
+ * @example
+ * // assuming your project's root is '/home/user/project'
  * const path = require('@nodewell/path')
  *
- * path('@') // will print out the project's root directory
- * path('@/src') // e.g.: 'project_root/src'
- * path('@/src/*.js') // e.g.: 'project_root/src/*.js'
+ * path('@') // '/home/user/project'
+ * path('@/src') // '/home/user/project/src'
+ * path('@/src/*.js') // '/home/user/project/src/*.js'
  */
 module.exports = (...paths) => {
   return processPath(packageDir, { ...dirMap, ...configData }, paths)
