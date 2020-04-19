@@ -200,9 +200,9 @@ Check out **in detail** the:
 
 ## 🏁 Submit A Pull Request
 
- - Open a [**pull request**][url-pull-req] and **reference the initial issue** [**in the pull request message**][url-pull-req-help] *(e.g.: fixes #42)*. Write a **good description and title**, so everybody will know what is fixed/improved.
+ - Open a [**pull request**][url-pull-req], follow the descriptions, **fill out the sections** accordingly, and **reference the initial issue** [**in the pull request message**][url-pull-req-help] *(e.g.: fixes #42)* - if exists, so everybody will know what is fixed/improved.
 
- - For ambitious changes, open a Pull Request as soon as possible with the `[WIP]` prefix in the title, in order to get feedback and help from the community. 
+ - For **ambitious changes**, open a Pull Request as soon as possible with the `[WIP]` prefix in the title, in order to get feedback and help from the community. 
  
  - **If it makes sense**, add screenshots, gifs, etc., so it will be easier to see what is going on.
  
