@@ -1,3 +1,10 @@
+## [1.1.4](https://github.com/nodewell/path/compare/v1.1.3...v1.1.4) (2020-04-28)
+
+
+### Bug Fixes
+
+* **docs:** fix dep badge link in README ([277c13a](https://github.com/nodewell/path/commit/277c13a15193ab7c58ba10ad50203e6aaf0470f3))
+
 ## [1.1.3](https://github.com/nodewell/path/compare/v1.1.2...v1.1.3) (2020-04-19)
 
 
