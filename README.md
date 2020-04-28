@@ -15,7 +15,7 @@
   <!-- Coverage badge -->
   <a href="https://codecov.io/gh/nodewell/path"><img src="https://img.shields.io/codecov/c/github/nodewell/path?style=flat-square" alt="coverage-badge"></a>
   <!-- Dependency badge -->
-  <a href="https://david-dm.org/nodewell/path"><img src="https://img.shields.io/badge/dependabot-enabled-brightgreen.svg?style=flat-square" alt="dependency-badge"></a>
+  <a href="https://libraries.io/github/nodewell/path"><img src="https://img.shields.io/badge/dependabot-enabled-brightgreen.svg?style=flat-square" alt="dependency-badge"></a>
   <!-- Documentation badge -->
   <a href="https://github.com/nodewell/path/blob/master/doc/API.md"><img src="https://inch-ci.org/github/nodewell/path.svg?branch=master&style=flat-square" alt="documentation-badge"></a>
 </p>
